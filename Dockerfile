@@ -3,7 +3,8 @@ FROM nginx:1.19-alpine
 RUN apk add --no-cache gomplate tini && \
   rm /etc/nginx/conf.d/default.conf
 
-COPY conf/*.conf /etc/nginx/
+COPY conf/nginx.conf /etc/nginx/
+COPY includes /etc/nginx/includes
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 COPY fragments /etc/fragments
 

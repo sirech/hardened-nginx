@@ -7,7 +7,7 @@ server {
 
     ssl_certificate           /cert/{{ getenv "HOST" }}.pem;
     ssl_certificate_key       /cert/{{ getenv "HOST" }}-key.pem;
-    include /etc/nginx/ssl-settings.conf;
+    include /etc/nginx/includes/ssl-settings.conf;
 
     keepalive_timeout 5;
     client_max_body_size 10M;
