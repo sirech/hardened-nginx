@@ -6,7 +6,7 @@ RUN apk add --no-cache gomplate tini && \
 COPY conf/nginx.conf /etc/nginx/
 COPY includes /etc/nginx/includes
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-COPY fragments /etc/fragments
+COPY fragments /etc/nginx/fragments
 
 RUN rm docker-entrypoint.sh && \
   rm -Rf docker-entrypoint.d && \

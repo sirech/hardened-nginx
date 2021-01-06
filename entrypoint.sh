@@ -10,9 +10,9 @@ if [ ! -d "$TEMPLATES_DIR" ]; then
 fi
 
 gomplate \
-    -t acme-challenge=/etc/fragments/acme-challenge.t \
-    -t acme-certificate=/etc/fragments/acme-certificate.t \
-    -t ssl-listen=/etc/fragments/ssl-listen.t \
+    -t acme-challenge=/etc/nginx/fragments/acme-challenge.t \
+    -t acme-certificate=/etc/nginx/fragments/acme-certificate.t \
+    -t ssl-listen=/etc/nginx/fragments/ssl-listen.t \
     --input-dir "${TEMPLATES_DIR}" \
     --output-map='/etc/nginx/sites-enabled/{{ .in | strings.ReplaceAll ".conf.tmpl" ".conf" }}'
 
