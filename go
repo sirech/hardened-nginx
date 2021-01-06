@@ -14,6 +14,7 @@ goal_containerize() {
 }
 
 goal_test-container() {
+  (cd fixture && docker build . -f Dockerfile.test -t "${IMAGE_NAME}-test")
   bundle install
   bundle exec rubocop
   bundle exec rspec spec

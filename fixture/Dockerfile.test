@@ -1,0 +1,9 @@
+FROM hardened-nginx:latest
+
+EXPOSE 443
+
+ENV HOST=localhost
+
+COPY cert /cert
+COPY content /srv/content
+COPY templates /etc/templates
