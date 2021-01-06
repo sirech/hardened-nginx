@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  nginx:
+    container_name: nginx
+    build: ..
+
+    environment:
+      HOST: localhost
+
+    ports:
+      - "443:443"
+
+    volumes:
+      - "./cert:/cert:ro"
+      - "./content:/srv/content:ro"
+      - "./templates:/etc/templates:ro"
