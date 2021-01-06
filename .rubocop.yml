@@ -1,0 +1,31 @@
+require: rubocop-rspec
+
+AllCops:
+    NewCops: enable
+
+Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
