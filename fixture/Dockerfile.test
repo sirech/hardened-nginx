@@ -1,4 +1,5 @@
-FROM hardened-nginx:latest
+ARG IMAGE_NAME=hardened-nginx
+FROM $IMAGE_NAME:latest
 
 EXPOSE 443
 
