@@ -6,10 +6,16 @@ require 'rspec/wait'
 set :backend, :docker
 set :docker_container, 'nginx'
 
+def fixtures
+  # Circle has a weird behavior for PWD
+  pwd = ENV['CIRCLE_WORKING_DIRECTORY'] || Dir.pwd
+  File.join(pwd, 'fixture')
+end
+
 RSpec.configure do |config|
   config.wait_timeout = 45 # seconds
 
-  compose = Dir.chdir(File.join(Dir.pwd, 'fixture')) do
+  compose = Dir.chdir(fixtures) do
     Docker::Compose.new
   end
 
