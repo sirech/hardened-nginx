@@ -1,6 +1,5 @@
 server {
     server_name {{ getenv "HOST" }};
-
     {{ template "ssl-listen" 443 }}
 
     root /srv/content;

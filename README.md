@@ -8,7 +8,20 @@ This is a hardened nginx image that provides sane defaults and allows templating
 
 ## How to use it
 
-## Hardening
+## Development
+
+There is a `go` script for development. When run without parameters, it shows the different targets.
+
+There is a test suite based on [ServerSpec](https://serverspec.org/). To run it, do
+
+```
+./go containerize
+./go test-container
+```
+
+## Architecture
+
+### Hardening
 
 The inspiration for the settings comes from a bunch of different sources:
 
