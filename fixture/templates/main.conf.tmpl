@@ -1,13 +1,13 @@
 server {
     server_name {{ getenv "HOST" }};
 
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    {{ template "ssl-listen" 443 }}
 
     root /srv/content;
 
     ssl_certificate           /cert/{{ getenv "HOST" }}.pem;
     ssl_certificate_key       /cert/{{ getenv "HOST" }}-key.pem;
+    include /etc/nginx/ssl-settings.conf;
 
     keepalive_timeout 5;
     client_max_body_size 10M;
