@@ -9,7 +9,7 @@ set :docker_container, 'nginx'
 def fixtures
   # Circle has a weird behavior for PWD
   pwd = ENV['CIRCLE_WORKING_DIRECTORY'] || Dir.pwd
-  File.join(pwd, 'fixture')
+  File.expand_path(File.join(pwd, 'fixture'))
 end
 
 RSpec.configure do |config|
