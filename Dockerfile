@@ -1,4 +1,4 @@
-FROM nginx:1.21-alpine
+FROM nginx:1.21.3-alpine
 
 RUN apk add --no-cache gomplate tini && \
   rm /etc/nginx/conf.d/default.conf
