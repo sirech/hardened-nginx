@@ -27,5 +27,8 @@ RSpec/MultipleExpectations:
 RSpec/NamedSubject:
   Enabled: false
 
+RSpec/NoExpectationExample:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false

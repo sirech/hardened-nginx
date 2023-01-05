@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe 'Container' do
   describe file('/etc/alpine-release') do
-    its(:content) { is_expected.to match(/3.14/) }
+    its(:content) { is_expected.to match(/3.17/) }
   end
 
   describe 'nginx' do
@@ -11,7 +11,7 @@ describe 'Container' do
     end
 
     describe command('nginx -v') do
-      its(:stderr) { is_expected.to match(%r{nginx/1.21}) }
+      its(:stderr) { is_expected.to match(%r{nginx/1.23}) }
     end
   end
 
